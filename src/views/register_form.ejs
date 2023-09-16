@@ -7,39 +7,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.16/dist/tailwind.min.css">
-    <%- include('partials/_head', {title: 'Register Form'}) %>
+    <%- include('partials/_head', {title: 'Register Customer'}) %>
+    <Script defer src="/js/fileUpload.js"></Script>
 </head>
+
 <body class="flex items-center justify-center h-screen bg-cover bg-center bg-gradient-to-r from-green-400 via-green-100 to-blue-400">
-    <div class="bg-white p-10 w-12/12 md:w-5/12 rounded-2xl shadow-2xl">
-        <img src="./images/Logo1.png" class="mx-auto w-12 h-12" alt="Buy Fit logo" >
-        <h1 class="text-center text-2xl font-bold mb-5">Welcome to Buy Fit!</h1>
-        <p class="text-center text-gray-700 mb-2">Choose the role:</p>
+  <div class="bg-white p-10 w-11/12 md:w-5/12 rounded-2xl shadow-2xl">
+    <img src= "/svg/Logo1.png" class="mx-auto w-12 h-12" alt="Buy Fit logo">
+    <h1 class="text-center text-2xl font-bold mb-5">I'm a Customer</h1>
+    <%- include ('./partials/_messages') %>
+    <form action="/auth/register/customer" method="post">
         <div class="mb-4">
-            <a href="/auth/register/customer" class="bg-green-600 hover:bg-green-500 text-white cursor-pointer w-full py-2 px-4 rounded-md text-center block text-base mx-auto my-4 transition duration-300 ease-in-out">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z" fill="rgba(255,255,255,1)"></path></svg>
-                I'm a Customer
-            </a>
+            <label class="block text-gray-700 mb-2" for="username">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"></path></svg>
+                Username
+            </label>
+            <input class="border rounded-lg px-3 py-1 w-full" type="text" name="username" id="username" value="<%= typeof username != 'undefined' ? username : ''%>">
         </div>
         <div class="mb-4">
-            <a href="/auth/register/vendor" class="bg-green-600 hover:bg-green-500 text-white cursor-pointer w-full py-2 px-4 rounded-md text-center block text-base mx-auto my-4 transition duration-300 ease-in-out">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M7 5V2C7 1.44772 7.44772 1 8 1H16C16.5523 1 17 1.44772 17 2V5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V6C2 5.44772 2.44772 5 3 5H7ZM16 15H13V16H11V15H8V19H16V15ZM8 7V13H11V12H13V13H16V7H8ZM6 13V7H4V13H6ZM18 13H20V7H18V13ZM6 15H4V19H6V15ZM18 15V19H20V15H18ZM9 3V5H15V3H9Z" fill="rgba(255,255,255,1)"></path></svg>
-                I'm a Vendor
-            </a>
+            <label class="block text-gray-700 mb-2" for="password">
+               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M18 8H20C20.5523 8 21 8.44772 21 9V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V9C3 8.44772 3.44772 8 4 8H6V7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7V8ZM5 10V20H19V10H5ZM11 14H13V16H11V14ZM7 14H9V16H7V14ZM15 14H17V16H15V14ZM16 8V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V8H16Z"></path></svg>
+               Password
+            </label>
+            <input class="border rounded-lg px-3 py-1 w-full" type="password" name="password" id="password" value="<%= typeof password != 'undefined' ? password : ''%>">
         </div>
         <div class="mb-4">
-            <a href="/auth/register/shipper" class="bg-green-600 hover:bg-green-500 text-white cursor-pointer w-full py-2 px-4 rounded-md text-center block text-base mx-auto my-4 transition duration-300 ease-in-out">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M8.36547 10L11.2 8H14.6915L13.5996 5H11V3H15L16.0919 6H20V9H17.1838L18.6405 13.0022C21.0608 13.0764 23 15.0617 23 17.5C23 19.9853 20.9853 22 18.5 22C16.0147 22 14 19.9853 14 17.5C14 15.6722 15.0897 14.0989 16.6549 13.3944L15.4194 10H14.4718L12.89 15.87L9.96536 16.9389C9.98822 17.1227 10 17.31 10 17.5C10 19.9853 7.98528 22 5.5 22C3.01472 22 1 19.9853 1 17.5C1 15.5407 2.25221 13.8738 4 13.2561V12H2V10H8.36547ZM5.5 20C6.88071 20 8 18.8807 8 17.5C8 16.1193 6.88071 15 5.5 15C4.11929 15 3 16.1193 3 17.5C3 18.8807 4.11929 20 5.5 20ZM18.5 20C19.8807 20 21 18.8807 21 17.5C21 16.1193 19.8807 15 18.5 15C17.1193 15 16 16.1193 16 17.5C16 18.8807 17.1193 20 18.5 20Z" fill="rgba(255,255,255,1)"></path></svg>
-                I'm a Shipper
-            </a>
+            <label class="block text-gray-700 mb-2" for="password">
+               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M18 8H20C20.5523 8 21 8.44772 21 9V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V9C3 8.44772 3.44772 8 4 8H6V7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7V8ZM5 10V20H19V10H5ZM11 14H13V16H11V14ZM7 14H9V16H7V14ZM15 14H17V16H15V14ZM16 8V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V8H16Z"></path></svg>
+               Confirm password
+            </label>
+            <input class="border rounded-lg px-3 py-1 w-full" type="password" name="password2" id="password2" value="<%= typeof password2 != 'undefined' ? password2 : ''%>">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2" for="name">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M3 18H21V6H3V18ZM1 5C1 4.44772 1.44772 4 2 4H22C22.5523 4 23 4.44772 23 5V19C23 19.5523 22.5523 20 22 20H2C1.44772 20 1 19.5523 1 19V5ZM9 10C9 9.44772 8.55228 9 8 9C7.44772 9 7 9.44772 7 10C7 10.5523 7.44772 11 8 11C8.55228 11 9 10.5523 9 10ZM11 10C11 11.6569 9.65685 13 8 13C6.34315 13 5 11.6569 5 10C5 8.34315 6.34315 7 8 7C9.65685 7 11 8.34315 11 10ZM8.0018 16C7.03503 16 6.1614 16.3907 5.52693 17.0251L4.11272 15.6109C5.10693 14.6167 6.4833 14 8.0018 14C9.52031 14 10.8967 14.6167 11.8909 15.6109L10.4767 17.0251C9.84221 16.3907 8.96858 16 8.0018 16ZM13 9V15H15V9H13ZM17 9V15H19V9H17Z"></path></svg>
+                Customer Name
+            </label>
+            <input class="border rounded-lg px-3 py-1 w-full" type="text" name="name" id="name" value="<%= typeof name != 'undefined' ? name : ''%>">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2" for="address">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M12.6727 1.61162L20.7999 9H17.8267L12 3.70302L6 9.15757V19.0001H11V21.0001H5C4.44772 21.0001 4 20.5524 4 20.0001V11.0001L1 11.0001L11.3273 1.61162C11.7087 1.26488 12.2913 1.26488 12.6727 1.61162Z M14 11H23V18H14V11ZM16 13V16H21V13H16Z M24 21H13V19H24V21Z"></path></svg>
+                Customer Address
+            </label>
+            <input class="border rounded-lg px-3 py-1 w-full" type="text" name="address" id="address" value="<%= typeof address != 'undefined' ? address : ''%>">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 mb-2" for="profilePicture">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" viewBox="0 0 24 24"><path d="M21 15V18H24V20H21V23H19V20H16V18H19V15H21ZM21.0082 3C21.556 3 22 3.44495 22 3.9934V13H20V5H4V18.999L14 9L17 12V14.829L14 11.8284L6.827 19H14V21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082ZM8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7Z"></path></svg>
+                Profile Picture
+            </label>
+            <input class="profileCover" type="file" name="profilePicture" id="profilePicture">
         </div>
         <div class="mb-4">
             <p class="inline text-gray-700 mb-2">Already have account?</p>
             <a href="/auth/login" class="underline font-bold">Sign in here</a>
         </div>
-    </div>
+        <button class="bg-green-600 hover:bg-green-500 text-white cursor-pointer w-full py-2 px-4 rounded-md text-center block text-base mx-auto my-4 transition duration-300 ease-in-out" type="submit">
+            Register now!
+        </button>
+    </form>
+  </div>
 </body>
+</html>
 </html>
