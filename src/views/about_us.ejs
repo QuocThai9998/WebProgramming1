@@ -1,0 +1,82 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023A -->
+<!-- Assessment: Assignment 2 -->
+<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
+<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
+<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/_head", {title: "About Us"}) %>
+</head>
+<body>
+    <%- include('partials/_header.ejs') %>
+    <main>
+        <section class="2xl:container 2xl:mx-auto lg:py-12 lg:px-16 md:py-12 md:px-6 py-9 px-4">
+            <div class="flex flex-col lg:flex-row justify-between gap-8">
+                <div class="lg:w-1/4 flex flex-col justify-center m-2 p-1">
+                    <h1 class="flex justify-center text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 m-1 p-1">About Us</h1>
+                    <p class="font-normal text-base leading-6 text-gray-600 italic m-1 p-1">We are Team 20 of the Assessment 2: Full-stack Web Application. 
+                        We build up this application with a view to welcoming customers to our new-released e-commerce platform. We look forward
+                        to hearing your responses about your experience in shoppping at our platform and we wish you a happy journey in 
+                        purchasing products and supports us.
+                    </p>
+                    <br>
+                    <p class="flex justify-center m-2 p-2 font-sans text-red-600 text-4xl italic font-bold ">
+                        Thank you for choosing us!!!
+                    </p>
+                </div>
+                <div class="lg:w-3/4 m-2 p-2">
+                    <img class="w-full h-4/5" src="images/background-image.jpg" alt="background-image" >
+                </div>
+            </div>
+            <div class="flex lg:flex-row flex-col justify-between gap-8 pt-12">
+                <div class="w-full lg:w-1/4 flex flex-col justify-center">
+                    <h1 class="flex justify-center text-3xl lg:text-4xl font-bold leading-9 text-gray-800 m-1 p-1">Our Story</h1>
+                    <p class="font-normal text-base leading-6 text-gray-600 italic m-1 p-1 sm:items-center">Our developer team finished this project in three weeks. 
+                        During this process, they had encountered so many bugs and difficulties but they still managed to accomplish 
+                        the objectives on time. 
+                    </p>
+                </div>
+                <div class="w-full lg:w-3/4 lg:pt-8">
+                    <div class="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
+                        <div class="p-4 pb-6 m-2 flex justify-center flex-col items-center lg:col-span-3 md:col-span-3 sm:col-span-2">
+                            <img class="md:block hidden w-[200px] h-[200px] rounded-full" src="images/nguyen-hoang-minh.jpg" alt="nguyen-hoang-minh" >
+                            <img class="md:hidden block w-[200px] h-[200px] rounded-full" src="images/nguyen-hoang-minh.jpg" alt="nguyen-hoang-minh" >
+                            <p class="font-medium text-lg leading-5 text-gray-800 mt-4">Nguyen Hoang Minh</p>
+                            <p class="font-normal text-lg leading-5 text-gray-800 mt-4">Project Manager</p>
+                        </div>
+                        <div class="p-4 pb-6 m-2 flex justify-center flex-col items-center lg:col-span-3 md:col-span-3 sm:col-span-2">
+                            <img class="md:block hidden w-[200px] h-[200px] rounded-full" src="images/hoang-thai-phuc.jpg" alt="hoang-thai-phuc" >
+                            <img class="md:hidden block w-[200px] h-[200px] rounded-full" src="images/hoang-thai-phuc.jpg" alt="hoang-thai-phuc" >
+                            <p class="font-medium text-lg leading-5 text-gray-800 mt-4">Hoang Thai Phuc</p>
+                            <p class="font-normal text-lg leading-5 text-gray-800 mt-4">Technical Leader</p>
+                        </div>
+                        <div class="p-4 pb-6 m-2 flex justify-center flex-col items-center lg:col-span-2 md:col-span-3 sm:col-span-2">
+                            <img class="md:block hidden w-[200px] h-[200px] rounded-full" src="images/tran-nguyen-anh-minh.jpg" alt="tran-nguyen-anh-minh" >
+                            <img class="md:hidden block w-[200px] h-[200px] rounded-full" src="images/tran-nguyen-anh-minh.jpg" alt="tran-nguyen-anh-minh" >
+                            <p class="font-medium text-lg leading-5 text-gray-800 mt-4">Tran Nguyen Anh Minh</p>
+                            <p class="font-normal text-lg leading-5 text-gray-800 mt-4"></p>
+                        </div>
+                        <div class="p-4 pb-6 m-2 flex justify-center flex-col items-center lg:col-span-2 md:col-span-3 sm:col-span-2">
+                            <img class="md:block hidden w-[200px] h-[200px] rounded-full" src="images/dao-bao-duy.jpg" alt="dao-bao-duy" >
+                            <img class="md:hidden block w-[200px] h-[200px] rounded-full" src="images/dao-bao-duy.jpg" alt="dao-bao-duy" >
+                            <p class="font-medium text-lg leading-5 text-gray-800 mt-4">Dao Bao Duy</p>
+                            <p class="font-normal text-lg leading-5 text-gray-800 mt-4"></p>
+                        </div>
+                        <div class="p-4 pb-6 m-2 flex justify-center flex-col items-center lg:col-span-2 md:col-span-3 sm:col-span-2">
+                            <img class="md:block hidden w-[200px] h-[200px] rounded-full" src="images/tran-luu-quang-tung.jpg" alt="tran-luu-quang-tung" >
+                            <img class="md:hidden block w-[200px] h-[200px] rounded-full" src="images/tran-luu-quang-tung.jpg" alt="tran-luu-quang-tung" >
+                            <p class="font-medium text-lg leading-5 text-gray-800 mt-4">Tran Luu Quang Tung</p>
+                            <p class="font-normal text-lg leading-5 text-gray-800 mt-4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include('partials/_footer.ejs') %>
+</body>
+</html>

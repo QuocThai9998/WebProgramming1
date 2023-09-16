@@ -1,0 +1,28 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023A -->
+<!-- Assessment: Assignment 2 -->
+<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
+<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
+<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
+                    <!-- Top seller items section -->
+<section class="flex flex-col justify-center p-2 m-2 rounded  mt-10">
+                <!-- Div contains h1: Top seller items...  -->
+    <div class="flex flex-row justify-center mt-2 mx-1 mb-5">
+        <h1 class="font-sans font-bold sm:text-3xl lg:text-3xl md:text-3xl italic my-3">
+            Just released
+        </h1>
+    </div>
+                <!-- Div contains h1: Top seller items...  -->
+                    <!-- Div contains product cards -->
+    <div class="flex flex-row justify-around flex-wrap min-w-[240px] [&>div]:w-[90%] sm:[&>div]:w-2/5  md:[&>div]:w-1/5">
+        <% if (locals.products != null) { %>
+            <% products.forEach(product => { %>
+                <%- include('_card', {product}) %>
+            <% }); %>
+        <% } %>
+    </div>
+                    <!-- Div contains product cards -->
+</section>
+                    <!-- Top seller items section -->

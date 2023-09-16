@@ -1,0 +1,81 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023A -->
+<!-- Assessment: Assignment 2 -->
+<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
+<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
+<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/_head.ejs', {title: "Order details"}) %>
+</head>
+<body>
+    <%- include('partials/_header.ejs') %>
+    <main class="flex flex-col justify-center items-center content-center">
+                                <!-- Title of the page -->
+        <h1 class="text-3xl font-bold font-sans text-center my-4 p-2">
+            Order detail
+        </h1>
+                                <!-- Title of the page -->
+        <section class="border-2 border-solid border-gray-200 rounded-xl w-1/2 mt-2 mb-4 p-1 font-sans">
+                            <!-- First div is a brief introduction of the order -->
+            <div class="flex flex-col m-4 p-4">
+                <h2 class="text-2xl font-bold italic text-center m-1 p-1">
+                    Order
+                </h2>
+                <p class="text-base m-1 p-1">Order ID: <%- order.id || "123123123" %></p>
+                <p class="m-1 p-1">Date: <%- order.date.toLocaleString() || "123123123" %></p>
+                <p class="m-1 p-1">
+                    Total price: 
+                    <% let total = 0 %>
+                    <% order.products.forEach(item => { %>
+                        <% total += item.product.price * item.quantity %>
+                    <% }) %>
+                    $<%= total %>
+                </p>
+            </div>
+                            <!-- First div is a brief introduction of the order -->
+                                <!-- Second div contains customer's info -->
+            <div class="flex flex-col m-4 p-4">
+                <h2 class="text-2xl font-bold italic text-center m-1 p-1">
+                    Shipping address
+                </h2>
+                <p class="m-1 p-1">Customer's name: <%- order.userFullName || "No name found" %> </p>
+                <p class="m-1 p-1">Address: <%- order.userAddress || "Unkown" %> </p>
+            </div>
+                                <!-- Second div contains customer's info -->
+                    <!-- Third div contains item's data (images, names, quantities, ...) -->
+            <div class="flex flex-col m-4 p-4">
+                <h2 class="text-2xl font-bold italic text-center m-1 p-1">
+                    Item(s)
+                </h2>
+                <% order.products.forEach(item => { %>
+                    <ul class="m-1">
+                        <li class="border border-solid border-gray-300 my-2 p-1 rounded-xl">
+                            <img class="flex justify-center w-1/2 h-1/2 my-1 py-1 mx-auto" src="<%= item.product.imageCoverData %>" alt="Product Image">
+                            <p class="my-1 py-1">Item name: <%= item.product.name %> </p>
+                            <p class="my-1 py-1">Price: $<%= item.product.price %></p>
+                            <p class="my-1 py-1">Quantity: <%= item.quantity %></p>
+                        </li>
+                    </ul>
+                <% }) %>
+            </div>
+                    <!-- Third div contains item's data (images, names, quantities, ...) -->
+                    <!-- Fourth div is the dropdown status button for shipper to interact -->
+            <div class="flex flex-row justify-center mx-4 p-1">
+                <%- include('partials/_options_dropdown_shipper.ejs') %>
+            </div>
+                    <!-- Fourth div is the dropdown status button for shipper to interact -->
+            <!-- Fifth div is the button that leads back to the shipper page -->
+            <div class="flex flex-row justify-start m-4 p-4">
+                <button onclick="window.location.href='/users/shipper'" class="bg-blue-800 text-xs text-white m-1 p-1 px-3 py-2 rounded-md">Back to active orders page</button>
+            </div>
+            <!-- Fifth div is the button that leads back to the shipper page -->
+
+        </section>
+    </main>
+    <%- include('partials/_footer.ejs') %>
+</body>
+</html>
