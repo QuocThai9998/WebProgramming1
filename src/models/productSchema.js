@@ -1,19 +1,10 @@
-// RMIT University Vietnam
-// Course: COSC2430 Web Programming
-// Semester: 2023A
-// Assessment: Assignment 2
-// Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy
-// ID: s3978081, s3977773, s3979367, s3978481, s3978826
-// Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified
-
 import mongoose, { Mongoose } from "mongoose";
 
-export const categories = ['Electronic and Appliances', 'Clothes', 'Food and Beverages', 'Toys']
+export const categories = ["Men's", "Women's", "Gear & Equipment", "Supplement"]
 // tags
-const ageTags = ['young adult', 'middle-aged', 'senior']
-const priceRangeTags = ['budget-friendly', 'luxury']
-const genderTags = ['male', 'female']
-export const tags = [].concat(...[ageTags, priceRangeTags, genderTags]) 
+const sizeTags = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+const priceTags = ['cheap', 'budget-friendly', 'expensive', 'your kidney']
+export const tags = [].concat(...[sizeTags, priceTags]) 
 
 const productSchema = new mongoose.Schema({
     name: {
