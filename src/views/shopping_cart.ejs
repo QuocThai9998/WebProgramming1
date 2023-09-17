@@ -1,11 +1,3 @@
-<!-- RMIT University Vietnam -->
-<!-- Course: COSC2430 Web Programming -->
-<!-- Semester: 2023A -->
-<!-- Assessment: Assignment 2 -->
-<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
-<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
-<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,9 +90,9 @@
                         <% } %>
 
                         <a href="/users/customer"
-                            class="inline-flex font-semibold text-indigo-600 text-sm mt-10">
+                            class="inline-flex font-semibold text-green-800 text-sm mt-10">
 
-                            <svg class="fill-current mr-2 text-indigo-600 w-4"
+                            <svg class="fill-current mr-2 text-green-800 w-4"
                                 viewBox="0 0 448 512">
                                 <path
                                     d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" ></path>
@@ -120,17 +112,8 @@
                             <span class="block p-2 text-gray-600 w-full text-sm">
                                 Standard shipping <span class="float-right">$10.00</span>
                             </span>
-                            <span class="promo20 rounded-md hidden p-2 cursor-pointer border border-solid border-transparent hover:border-gray-500 hover:shadow-md text-gray-600 w-full text-sm">
-                                Promotion code <span class="float-right">-20%</span> 
-                            </span>
                         </div>
-                        <div class="py-10">
-                            <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo
-                                Code</label>
-                            <input class="border rounded-md px-3 py-1 p-2 text-sm w-full" type="text" id="promo" placeholder="Enter your code">
-                        </div>
-                        <button id="apply-promo"
-                            class="no-submit rounded-md  bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
+
                         <!-- Checkout  -->
                         <div class="border-t mt-8">
                             <div class="flex font-semibold justify-between py-6 text-sm uppercase">
@@ -138,7 +121,7 @@
                                 <span id="totalCost">$<%= (total + 10) || 0%> </span>
                             </div>
                             <button type="submit"
-                                class="bg-indigo-500 rounded-md font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+                                class="bg-lime-500 rounded-md font-semibold hover:bg-lime-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
                         </div>
                     </div>
                 </div>
@@ -178,31 +161,6 @@
                 })
         
             }
-        
-            let discount = 1
-        
-            $('#promo').on('keypress', function(e) {
-                if (event.which !== 13) return
-                if ($(this).val().toUpperCase() == 'ILOVETOM') {
-                    $('.promo20').show()
-                    discount = 0.8
-                    updateTotal()
-                }
-            })
-        
-            $('#apply-promo').on('click', () => {
-                if ($('#promo').val().toUpperCase() == 'ILOVETOM') {
-                    $('.promo20').show()
-                    discount = 0.8
-                    updateTotal()
-                }
-            })
-        
-            $('.promo20').on('click', function() {
-                $(this).hide()
-                discount = 1
-                updateTotal()
-            })
         
             function quantityUpdate(id, quantityAfter, itemPrice) {
                 $(`#quantityValue-${id}`).text(quantityAfter)
