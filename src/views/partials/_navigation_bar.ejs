@@ -6,62 +6,62 @@
 <!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
 <!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
 
-<div id="navigation-bar" class="w-full border-solid-1 border-b-green-300">
-    <nav class="w-full flex justify-between px-4 md:px-12 py-4">
-        <!-- Logo -->
-        <div class="flex gap-2 cursor-pointer"
-            onclick="location.href='/'"
-        >
-            <img class="w-10" src="/images/logo.png" alt="Buy Fit logo">
-            <div class="logo center-y float-left tracking-wider uppercase font-bold">Buy Fit</div>
+<header class='border-b py-4 px-4 sm:px-10 bg-green font-sans min-h-[70px] items-center'>
+  <div class='flex flex-wrap justify-between items-center'>
+    
+      <div class="flex gap-2 cursor-pointer"
+         onclick="location.href='/'"
+      >
+        <img class="w-20 h-20" src="/img/Logo.png" alt="Buy Fit logo">
         </div>
+    
 
-        <!-- Navigation list -->
-        <ul id="hamburger-menu" class="whitespace-nowrap offcanvas-r bg-white [&_li]:w-full [&_li]:text-center [&_a]:py-4 [&_a]:px-12 [&_a]:block [&_a]:w-h-full [&_a:hover]:bg-violet-200 md:bg-transparent md:gap-8 md:static md:flex-row md:[&_a]:p-0 md:[&_a:hover]:bg-transparent md:[&_a:hover]:text-violet-400 sidemenu-transition-300">
-            <li><a href="/about-us">About Us</a></li>
-            <!-- Display link to user's pages on different user type -->
-            <% if (user) { %>
-                <% if (userType == "Customer") { %>
-                    <!-- Customer page -->
-                    <li><a href="/users/customer">Shop</a></li>
-                <% } else if (userType == "Vendor") { %>
-                    <!-- Vendor page -->
-                    <li><a href="/users/vendor">Products</a></li>
-                <% } else if (userType == "Shipper") { %>
-                    <!-- Vendor page -->
-                    <li><a href="/users/Shipper">Orders</a></li>
-                <% } %>
-            <% } else { %>
-                <li><a href="/users/customer">Shop</a></li>
-            <% } %>
-            <li><a href="/contact-us">Contact Us</a></li>
-            <!-- Code that separates My Account and Login -->
-            <% if (user) { %>
-                <% if (userType == "Customer") { %>
-                    <!-- Customer My Account Link -->
-                    <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
-                <% } else if (userType == "Vendor") { %>
-                    <!-- Vendor My Account Link -->
-                    <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
-                <% } else if (userType == "Shipper") { %>
-                    <!-- Vendor My Account Link -->
-                    <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
-                <% } %>
-            <% } else { %>
-                <!-- Login Link -->
-                <li class="-order-1 md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 cursor-pointer" onclick="window.location.href='/auth/login'" src="/svg/login-box-line.svg" alt="Login"></li>
-            <% } %>
-            <!-- Code that separates My Account and Login -->
-        </ul>
+    <button class='lg:hidden ml-auto'>
+      <svg class="w-7 h-7" fill="#000" viewBox="" xmlns="http://www.w3.org/2000/svg">
+      </svg>
+    </button>
 
-        <!-- Hamburger menu -->
-        <div class="center-y md:hidden">
-			<button id="navbar-burger" class="center-y text-violet-600 p-1">
-				<svg class="block h-5 w-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-					<title>Mobile menu</title>
-					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-				</svg>
-			</button>
-		</div>
-    </nav>
-</div>
+    <ul class='flex lg:ml-16 lg:space-x-3 max-lg:space-y-2 max-lg:block max-lg:w-full max-lg:mt-6'>
+        <li><a href='/about-us'
+            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>About Us</a></li>
+        <!-- Display link to user's pages on different user type -->
+        <% if (user) { %>
+            <% if (userType == "Customer") { %>
+                <!-- Customer page -->
+                <li><a href='/users/customer'
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Shop</a></li>
+            <% } else if (userType == "Vendor") { %>
+                <!-- Vendor page -->
+                <li><a href='/users/vendor'
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Products</a></li>
+            <% } else if (userType == "Shipper") { %>
+                <!-- Vendor page -->
+                <li><a href='/users/Shipper'
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Orders</a></li>
+            <% } %>
+        <% } else { %>
+            <li><a href='/users/customer'
+                class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Shop</a></li>
+        <% } %>
+        <li><a href='/contact-us'
+            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Contact Us</a></li>
+        <!-- Code that separates My Account and Login -->
+        <% if (user) { %>
+            <% if (userType == "Customer") { %>
+                <!-- Customer My Account Link -->
+                <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
+            <% } else if (userType == "Vendor") { %>
+                <!-- Vendor My Account Link -->
+                <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
+            <% } else if (userType == "Shipper") { %>
+                <!-- Vendor My Account Link -->
+                <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
+            <% } %>
+        <% } else { %>
+            <!-- Login Link -->
+            <li class="-order-1 md:order-1 p-4 md:p-0 flex flex-row justify-center"><button type="button" class="mb-auto text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 fa fa-sign-in-to-bracket  cursor-pointer" onclick="window.location.href='/auth/login'" alt="Login">Login</button>
+        <% } %>
+        <!-- Code that separates My Account and Login -->
+    </ul>
+  </div>
+</header>
