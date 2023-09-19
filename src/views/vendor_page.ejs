@@ -1,21 +1,12 @@
-<!-- RMIT University Vietnam -->
-<!-- Course: COSC2430 Web Programming -->
-<!-- Semester: 2023A -->
-<!-- Assessment: Assignment 2 -->
-<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
-<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
-<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <%- include("partials/_head", {title: "Vendor page"}) %>
-    <!-- <link rel="stylesheet" href="/vendor_page.css"> -->
 </head>
 <body>
     <%- include('partials/_header.ejs') %>
     <main class="relative flex items-center justify-center h-auto bg-cover bg-center">
-        <div class="bg-white block w-screen h-auto md:mx-5 md:my-5 shadow-xl rounded sm:my-0 sm:mx-0">
+        <div class="bg-lime-100 block w-screen h-auto md:mx-5 md:my-5 shadow-xl rounded sm:my-0 sm:mx-0">
             <div class="flex-1 w-full my-4 mx-4">
                 <img src="<%= user.userPicture %>" alt="User Profile Picture" class="object-cover inline w-16 h-16 overflow-hidden rounded-full">
                 <p class="inline text-xl font-bold ml-2">Welcome back, <%= user.businessName %>!</p>
@@ -60,7 +51,7 @@
             <a href="/users/vendor/addproduct" class="bg-green-500 hover:bg-green-600 text-white cursor-pointer w-auto py-2 px-4 mx-4 my-4 rounded-md text-center text-base transition duration-300 ease-in-out block">Add new product</a>
         </div>
 
-        <!-- del-confirm-modal -->
+
         <div id="del-confirm-modal" tabindex="-1" class="close-modal hidden fixed backdrop-blur-[2px] top-0 left-0 right-0 bottom-0 z-50 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full max-h-full">
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md max-h-full">
               <div class="relative bg-white rounded-lg shadow-2xl">
@@ -84,10 +75,10 @@
     <Script>
       $('.del-product').on('click', function(e) {
         e.preventDefault()
-        // pop up the modal
+        // Pop-up
         $('#del-confirm-modal').show(200)
     
-        // Gets the target's href
+        // Get href for target
         const href = $(this).attr('href')
         $('.del-confirmed').attr('href', href)
         console.log(href)
