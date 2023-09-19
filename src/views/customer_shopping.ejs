@@ -1,11 +1,3 @@
-<!-- RMIT University Vietnam -->
-<!-- Course: COSC2430 Web Programming -->
-<!-- Semester: 2023A -->
-<!-- Assessment: Assignment 2 -->
-<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
-<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
-<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +6,7 @@
 <body>
     <%- include('partials/_header.ejs') %>
     <main class="px-6 py-2">
+        <div id="gradient" class="fixed -z-10 top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-lime-300 via-transparent to-transparent opacity-30"></div>
         <section class="mt-8">
             <!-- Main category -->
             <div class="pb-6 pt-4 border-b border-gray-300 flex justify-between">
@@ -54,16 +47,16 @@
                 data-current-page="<%= pageInfo.currentPage %>"
                 data-total-page="<%= pageInfo.totalPage %>"
                 data-page-size="<%= pageInfo.pageSize %>">
-                <!-- <span class="page-link"><svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.8284 12.0005L14.6569 14.8289L13.2426 16.2431L9 12.0005L13.2426 7.75781L14.6569 9.17203L11.8284 12.0005Z" fill="rgba(173,184,194,1)"></path></svg></span> -->
+              
                 <% //for (let i = 1; i <= (pageInfo.totalPage > 3 ? 3 : pageInfo.totalPage); i++) { %>
                     <% //if (pageInfo.currentPage >  3) { %>
-                        <!-- <span class="page-link cursor-pointer" data-page-number="2">t</span> -->
+                      
                     <% //} else { %>
-                        <!-- <span class="page-link cursor-pointer" data-page-number="<%= //i %>"><%= //i %></span> -->
+                        
                     <% //} %>
                 <% //} %>
                 <% //if (pageInfo.totalPage > 3) { %>
-                    <!-- <span class="text-gray-500">. . .</span>
+
                     <span class="page-link cursor-pointer" data-page-number="<%= //pageInfo.totalPage %>"><%= //pageInfo.totalPage %></span> -->
                 <% //} %>
             </div>
