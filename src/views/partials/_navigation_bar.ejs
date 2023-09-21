@@ -1,3 +1,12 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023A -->
+<!-- Assessment: Assignment 2 -->
+<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
+<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
+<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
+
 <header class='border-b py-4 px-4 sm:px-10 bg-green font-sans min-h-[70px] items-center'>
   <div class='flex flex-wrap justify-between items-center'>
     
@@ -15,39 +24,39 @@
 
     <ul class='flex lg:ml-16 lg:space-x-3 max-lg:space-y-2 max-lg:block max-lg:w-full max-lg:mt-6'>
         <li><a href='/about-us'
-            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>About Us</a></li>
+            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg mr-2'>About Us</a></li>
         <!-- Display link to user's pages on different user type -->
         <% if (user) { %>
             <% if (userType == "Customer") { %>
                 <!-- Customer page -->
                 <li><a href='/users/customer'
-                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Shop</a></li>
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg mr-2'>Shop</a></li>
             <% } else if (userType == "Vendor") { %>
                 <!-- Vendor page -->
                 <li><a href='/users/vendor'
-                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Products</a></li>
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg mr-2'>Products</a></li>
             <% } else if (userType == "Shipper") { %>
                 <!-- Vendor page -->
                 <li><a href='/users/Shipper'
-                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Orders</a></li>
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg mr-2'>Orders</a></li>
             <% } %>
         <% } else { %>
             <li><a href='/users/customer'
-                class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Shop</a></li>
+                class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg mr-2'>Shop</a></li>
         <% } %>
         <li><a href='/contact-us'
-            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Contact Us</a></li>
+            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg mr-2'>Contact Us</a></li>
         <!-- Code that separates My Account and Login -->
         <% if (user) { %>
             <% if (userType == "Customer") { %>
                 <!-- Customer My Account Link -->
-                <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
+                <li id="user" data-user-type="<%= userType %>" class="-order-1 ml-2 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
             <% } else if (userType == "Vendor") { %>
                 <!-- Vendor My Account Link -->
-                <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
+                <li id="user" data-user-type="<%= userType %>" class="-order-1 ml-2 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
             <% } else if (userType == "Shipper") { %>
                 <!-- Vendor My Account Link -->
-                <li id="user" data-user-type="<%= userType %>" class="-order-1 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
+                <li id="user" data-user-type="<%= userType %>" class="-order-1 ml-2 relative md:order-1 p-4 md:p-0 flex flex-row justify-center"><img class="w-10 md:w-8 object-cover aspect-square cursor-pointer rounded-full" src="<%= user.userPicture %>" alt="Account"></li>
             <% } %>
         <% } else { %>
             <!-- Login Link -->
