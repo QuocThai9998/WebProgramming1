@@ -1,18 +1,10 @@
-<!-- RMIT University Vietnam -->
-<!-- Course: COSC2430 Web Programming -->
-<!-- Semester: 2023A -->
-<!-- Assessment: Assignment 2 -->
-<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
-<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
-<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
-
 <header class='border-b py-4 px-4 sm:px-10 bg-green font-sans min-h-[70px] items-center'>
   <div class='flex flex-wrap justify-between items-center'>
     
       <div class="flex gap-2 cursor-pointer"
          onclick="location.href='/'"
       >
-        <img class="w-20 h-20" src="/img/Logo.png" alt="Buy Fit logo">
+        <img class="w-20 h-20" src="/images/Logo.png" alt="Buy Fit logo">
         </div>
     
 
@@ -23,28 +15,28 @@
 
     <ul class='flex lg:ml-16 lg:space-x-3 max-lg:space-y-2 max-lg:block max-lg:w-full max-lg:mt-6'>
         <li><a href='/about-us'
-            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>About Us</a></li>
+            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>About Us</a></li>
         <!-- Display link to user's pages on different user type -->
         <% if (user) { %>
             <% if (userType == "Customer") { %>
                 <!-- Customer page -->
                 <li><a href='/users/customer'
-                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Shop</a></li>
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Shop</a></li>
             <% } else if (userType == "Vendor") { %>
                 <!-- Vendor page -->
                 <li><a href='/users/vendor'
-                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Products</a></li>
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Products</a></li>
             <% } else if (userType == "Shipper") { %>
                 <!-- Vendor page -->
                 <li><a href='/users/Shipper'
-                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Orders</a></li>
+                    class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Orders</a></li>
             <% } %>
         <% } else { %>
             <li><a href='/users/customer'
-                class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Shop</a></li>
+                class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Shop</a></li>
         <% } %>
         <li><a href='/contact-us'
-            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-sm'>Contact Us</a></li>
+            class='lg:hover:text-[#007bff] text-black text-gray-500 block font-semibold text-lg'>Contact Us</a></li>
         <!-- Code that separates My Account and Login -->
         <% if (user) { %>
             <% if (userType == "Customer") { %>
@@ -59,7 +51,7 @@
             <% } %>
         <% } else { %>
             <!-- Login Link -->
-            <li class="-order-1 md:order-1 p-4 md:p-0 flex flex-row justify-center"><button type="button" class="mb-auto text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 fa fa-sign-in-to-bracket  cursor-pointer" onclick="window.location.href='/auth/login'" alt="Login">Login</button>
+            <li class="-order-1 md:order-1 p-4 md:p-0 flex flex-row justify-center"><button type="button" class="mb-auto text-white bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2 fa fa-sign-in-to-bracket  cursor-pointer" onclick="window.location.href='/auth/login'" alt="Login">Login</button>
         <% } %>
         <!-- Code that separates My Account and Login -->
     </ul>
