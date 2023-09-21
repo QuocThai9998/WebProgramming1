@@ -16,7 +16,9 @@ Existing accounts to test:
 
     Shipper:  username: Khiem123
               password: Kh!em123
-              
+
+              username: Khiem1234
+              password: Kh!em1234
               
 
 Website starting procedures:
