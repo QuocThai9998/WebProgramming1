@@ -1,6 +1,11 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023A -->
+<!-- Assessment: Assignment 2 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.16/dist/tailwind.min.css">
     <%- include("partials/_head", {title: "Shipper page"}) %>
 </head>
 <body>
@@ -9,22 +14,21 @@
                                     <!-- Distribution hub info is here -->
         <div class="flex md:flex-row justify-center m-1 p-1 flex-col"> 
             <div class="m-2 p-1 md:w-3/5 shadow-lg w-full ">
-                <img class="bg-gradient-to-b w-h-full object-cover" src="<%- locals.distributionHubImage || '/images/distribution-hub-1.jpg' %>" alt="Distribution image">
+                <img class="bg-gradient-to-b w-h-full object-cover" src="<%- locals.distributionHubImage || '/images/DistributionHub.png' %>" alt="Distribution image">
             </div>
             <div class="m-2 p-2 md:w-2/5 flex flex-col justify-start border-gray-300 border rounded-md sm:w-full">
                 <div class="font-serif font-bold m-1 p-1">
-                    <h1 class="text-3xl">
-                        Distribution hub: <%- user.distributionHub || "Unknown" %>
+                    <h1 class="text-3xl text-green-600 ">
+                        Distribution Hub: <%- user.distributionHub || "Unknown" %>
                     </h1>
                 </div>
                 <div class="flex flex-col">
                     <p class="italic font-sans m-1 p-1">
-                        Address: <%- locals.distributionHubLocation || "Ho Chi Minh City, Vietnam" %>
+                        Location: <%- locals.distributionHubLocation || "Ho Chi Minh City, Vietnam" %>
                     </p>
                     <br>
-                    <p class="m-1 p-1">
-                        Established in 2023, located in the central district, this distribution hub is one of 
-                        the busiest destination of the city. The first distribution hub of our company in Vietnam. 
+                    <p class="m-1 p-1 flex-col ">
+                        Distribution Hub is a leading distribution company with the cutting-edge technology. Our mission is to provide the fastest delivery to our clients across Ho Chi Minh City.
                     </p>
                 </div>
             </div>
@@ -42,7 +46,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center w-64 font-bold py-2 px-4 border-b-2 border-gray-300">Order ID</th>
-                                    <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Customer Name</th>
+                                    <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Shippper Name</th>
                                     <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Delivery Address</th>
                                     <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Total Amount</th>
                                     <th class="text-center w-32 font-bold py-2 px-4 border-b-2 border-gray-300">Status</th>
@@ -73,7 +77,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center w-64 font-bold py-2 px-4 border-b-2 border-gray-300">Order ID</th>
-                                    <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Customer Name</th>
+                                    <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Shipper Name</th>
                                     <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Delivery Address</th>
                                     <th class="text-center font-bold py-2 px-4 border-b-2 border-gray-300">Total Amount</th>
                                     <th class="text-center w-32 font-bold py-2 px-4 border-b-2 border-gray-300">Status</th>
