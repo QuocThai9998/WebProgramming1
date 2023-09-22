@@ -1,12 +1,21 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023B -->
+<!-- Assessment: Assignment 2 -->
+<!-- Author: Nguyen Tu Quoc Thai ,Nguyen Minh Trong Nhan, Tran Hoang Khiem -->
+<!-- ID: s3957050, s3924462, s3966954 -->
+<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("partials/_head", {title: "Vendor page"}) %>
+    <%- include("partials/head", {title: "Vendor page"}) %>
 </head>
 <body>
-    <%- include('partials/_header.ejs') %>
+    <%- include('partials/header.ejs') %>
     <main class="relative flex items-center justify-center h-auto bg-cover bg-center">
-        <div class="bg-lime-100 block w-screen h-auto md:mx-5 md:my-5 shadow-xl rounded sm:my-0 sm:mx-0">
+      <div id="gradient" class="fixed -z-10 top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-lime-300 via-transparent to-transparent opacity-30"></div>  
+      <div class="bg-white block w-screen h-auto md:mx-5 md:my-5 shadow-xl rounded sm:my-0 sm:mx-0">
             <div class="flex-1 w-full my-4 mx-4">
                 <img src="<%= user.userPicture %>" alt="User Profile Picture" class="object-cover inline w-16 h-16 overflow-hidden rounded-full">
                 <p class="inline text-xl font-bold ml-2">Welcome back, <%= user.businessName %>!</p>
@@ -33,7 +42,7 @@
                         <td data-label="Actions" class="action-div justify-center md:gap-6 flex-row">
                           <div>
                             <a href="/users/vendor/<%= product.id %>">
-                              <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33365L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6474L14.435 2.21233C14.8256 1.8218 15.4587 1.8218 15.8492 2.21233L18.6777 5.04075C19.0682 5.43128 19.0682 6.06444 18.6777 6.45497L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z" fill="rgba(139,92,246,1)"></path></svg>
+                              <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33365L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6474L14.435 2.21233C14.8256 1.8218 15.4587 1.8218 15.8492 2.21233L18.6777 5.04075C19.0682 5.43128 19.0682 6.06444 18.6777 6.45497L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z" fill="rgba(0, 181, 0, 0.8)"></path></svg>
                             </a>
                           </div>
                           <div> 
@@ -71,7 +80,7 @@
           </div>
       </div>
     </main>
-    <%- include('partials/_footer.ejs') %>
+    <%- include('partials/footer.ejs') %>
     <Script>
       $('.del-product').on('click', function(e) {
         e.preventDefault()

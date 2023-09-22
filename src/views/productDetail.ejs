@@ -1,19 +1,25 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023B -->
+<!-- Assessment: Assignment 2 -->
+<!-- Author: Nguyen Tu Quoc Thai ,Nguyen Minh Trong Nhan, Tran Hoang Khiem -->
+<!-- ID: s3957050, s3924462, s3966954 -->
+<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("partials/_head", {title: "Vendor add product"}) %>
-    <!-- <script defer src="/js/rating.js"></script> -->
+    <%- include("partials/head", {title: "Vendor add product"}) %>
     <script defer src="/js/quantityControl.js"></script>
 </head>
 <body>
     <header>
-        <!-- Navigation bar -->
-        <%- include("partials/_navigation_bar"); %>
-        <%- include("partials/_category_bar.ejs"); %>
+        <%- include("partials/nav_bar"); %>
+        <%- include("partials/category_bar.ejs"); %>
     </header>
     <main class="px-[10%]">
         <section class="py-10">
-            <!-- This could be breadcrumb (to be added) -->
+            <!-- Breadcrumbs -->
             <div class="w-full overflow-hidden text-ellipsis text-gray-400 [&_a:hover]:text-violet-400">
                 <% const urlCategory = product.category.replace(/\s/g, '+') %>
                 <a href="/">Home</a>
@@ -22,12 +28,15 @@
                 <span>/</span>
                 <p class="inline text-ellipsis text-gray-700"><%- product.name %></p>
             </div>
-            <!-- Product preview -->
+
+            <!-- Product -->
             <div class="center-x flex flex-col sm:flex-row sm:gap-4">
+
                 <!-- Image -->
                 <div class="aspect-square w-full sm:w-2/5 mb-4 sm:mb-0">
                     <img class='shadow-sm w-h-full object-contain transition-300' src="<%= product.imageCoverData%>" alt="hero-image-2">
                 </div>
+
                 <!-- Information -->
                 <div class="flex flex-col w-full sm:w-3/5">
                     <!-- Brand -->
@@ -72,11 +81,12 @@
             </div>
         </section>
     </main>
-    <%- include("partials/_footer.ejs"); %>
+    <%- include("partials/footer.ejs"); %>
     <form id="addProduct"action="/users/customer/<%= product.id %>/add" method="get">
         <input type="hidden" name="productQuantity" id="productQuantity" value="1">
     </form>
 
+    <!-- This add product in cart -->
     <script>
         $(document).ready(function () {
             const addToCart = $("#addToCart")

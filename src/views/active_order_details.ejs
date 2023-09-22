@@ -1,26 +1,27 @@
 <!-- RMIT University Vietnam -->
 <!-- Course: COSC2430 Web Programming -->
-<!-- Semester: 2023A -->
+<!-- Semester: 2023B -->
 <!-- Assessment: Assignment 2 -->
-<!-- Author: Hoang Thai Phuc, Nguyen Hoang Minh, Tran Nguyen Anh Minh, Tran Luu Quang Tung, Dao Bao Duy -->
-<!-- ID: s3978081, s3977773, s3979367, s3978481, s3978826 -->
+<!-- Author: Nguyen Tu Quoc Thai ,Nguyen Minh Trong Nhan, Tran Hoang Khiem -->
+<!-- ID: s3957050, s3924462, s3966954 -->
 <!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('partials/_head.ejs', {title: "Order details"}) %>
+    <%- include('partials/head.ejs', {title: "Order details"}) %>
 </head>
 <body>
-    <%- include('partials/_header.ejs') %>
+    <%- include('partials/header.ejs') %>
     <main class="flex flex-col justify-center items-center content-center">
-                                <!-- Title of the page -->
+
         <h1 class="text-3xl font-bold font-sans text-center my-4 p-2">
             Order detail
         </h1>
-                                <!-- Title of the page -->
+
         <section class="border-2 border-solid border-gray-200 rounded-xl w-1/2 mt-2 mb-4 p-1 font-sans">
-                            <!-- First div is a brief introduction of the order -->
+                            <!-- Introduction of the order -->
             <div class="flex flex-col m-4 p-4">
                 <h2 class="text-2xl font-bold italic text-center m-1 p-1">
                     Order
@@ -36,8 +37,8 @@
                     $<%= total %>
                 </p>
             </div>
-                            <!-- First div is a brief introduction of the order -->
-                                <!-- Second div contains customer's info -->
+
+                                <!-- Customer's info -->
             <div class="flex flex-col m-4 p-4">
                 <h2 class="text-2xl font-bold italic text-center m-1 p-1">
                     Shipping address
@@ -45,8 +46,8 @@
                 <p class="m-1 p-1">Customer's name: <%- order.userFullName || "No name found" %> </p>
                 <p class="m-1 p-1">Address: <%- order.userAddress || "Unkown" %> </p>
             </div>
-                                <!-- Second div contains customer's info -->
-                    <!-- Third div contains item's data (images, names, quantities, ...) -->
+
+                    <!-- Item's data -->
             <div class="flex flex-col m-4 p-4">
                 <h2 class="text-2xl font-bold italic text-center m-1 p-1">
                     Item(s)
@@ -62,20 +63,18 @@
                     </ul>
                 <% }) %>
             </div>
-                    <!-- Third div contains item's data (images, names, quantities, ...) -->
-                    <!-- Fourth div is the dropdown status button for shipper to interact -->
+
+                    <!-- Dropdown status button for shipper to interact -->
             <div class="flex flex-row justify-center mx-4 p-1">
                 <%- include('partials/_options_dropdown_shipper.ejs') %>
             </div>
-                    <!-- Fourth div is the dropdown status button for shipper to interact -->
-            <!-- Fifth div is the button that leads back to the shipper page -->
+
+            <!-- Back button -->
             <div class="flex flex-row justify-start m-4 p-4">
                 <button onclick="window.location.href='/users/shipper'" class="bg-blue-800 text-xs text-white m-1 p-1 px-3 py-2 rounded-md">Back to active orders page</button>
             </div>
-            <!-- Fifth div is the button that leads back to the shipper page -->
-
         </section>
     </main>
-    <%- include('partials/_footer.ejs') %>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>

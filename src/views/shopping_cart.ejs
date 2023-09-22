@@ -1,13 +1,20 @@
+<!-- RMIT University Vietnam -->
+<!-- Course: COSC2430 Web Programming -->
+<!-- Semester: 2023B -->
+<!-- Assessment: Assignment 2 -->
+<!-- Author: Nguyen Tu Quoc Thai ,Nguyen Minh Trong Nhan, Tran Hoang Khiem -->
+<!-- ID: s3957050, s3924462, s3966954 -->
+<!-- Acknowledgement: W3School, TailwindCss, ChatGPT, Passport documentation, RemixIcons, Freepik, Web Dev Simplified -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <%- include("partials/_head", {title: "Shopping cart" }) %>
+    <%- include("partials/head", {title: "Shopping cart" }) %>
 </head>
 
 <body>
-    <% %>
-    <%- include('partials/_header.ejs') %>
+    <%- include('partials/header.ejs') %>
         <div class="container mx-auto mt-5">
             <form action="/users/customer/checkout" method="post">
                 <div class="flex flex-col shadow-2xl my-10 md:flex-row">
@@ -30,7 +37,7 @@
                                 Total
                             </h3>
                         </div>
-                        <!-- Using loop to display products -->
+
                         <% if (cartItems.length===0) { %>
                             <p>Buying successfully!.</p>
                         <% } else { %>
@@ -79,9 +86,8 @@
                                     <!-- Total -->
                                     <span id="totalItemPrice-<%= count %>" class="text-center float-right w-1/5 font-semibold text-sm">$<%= item[1].price * item[0] %></span>
                                     <% //total=(item[1].price * item[0]) + total %>
-                                    <!-- <span class="text-center w-1/5 font-semibold text-sm">$<%= //total %></span> -->
                                 </div>
-                                <!-- req.body data -->
+
                                 <input id="productQuantity-<%= count %>" type="hidden" name="productQuantity" value="<%= item[0] %>">
                                 <input id="productId-<%= count %>" type="hidden" name="productId" value="<%= item[1]._id %>">
 
@@ -127,12 +133,11 @@
                 </div>
             </form>
         </div>
-        <%- include('partials/_footer.ejs') %>
+        <%- include('partials/footer.ejs') %>
         <script>
             const cartLength = '<%= cartItems.length %>'
             const noSubmitBtn = $('.no-submit')
         
-            // prevent submit
             noSubmitBtn.each(function () {
                 $(this).on('click', e => {
                     e.preventDefault()
